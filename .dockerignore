@@ -1,0 +1,7 @@
+*
+!.env
+!src
+!package.json
+!package-lock.json
+!tsconfig.json
+!infrastructure

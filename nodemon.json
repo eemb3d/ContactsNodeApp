@@ -1,0 +1,7 @@
+{
+  "exec": "ts-node --files ./src/server.ts",
+  "ext": "ts,html",
+  "watch": [
+      "./src"
+  ]
+}

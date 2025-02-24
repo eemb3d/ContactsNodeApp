@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% set contactSummaryData = [] %}
+
+{% for contact in contacts %}
+
+  {% set contactEditHref = "/contact/update/" + loop.index0 %}
+  {% set contactDeleteHref = "/contact/remove/" + loop.index0 %}
+
+  {% set contactSummaryData = (contactSummaryData.push({
+    key: { 
+      text: "Contact name"
+    },
+    value: {
+      text: contact.first_name + " " + contact.last_name
+    },
+    actions: {
+      items: [
+        {
+          href: contactEditHref,
+          text: "View/Edit",
+          visuallyHiddenText: "Contact name"
+        },
+        {
+          href: contactDeleteHref,
+          text: "Delete",
+          visuallyHiddenText: "Contact name"
+        }
+      ]
+    }
+  }), contactSummaryData) %}
+
+{% endfor %}
+
+{% block content %}
+    <h1 class="govuk-heading-xl">
+        List Contacts Details
+    </h1>
+
+    {{ govukSummaryList({
+        rows: contactSummaryData
+    }) }}
+{% endblock %}

@@ -2,7 +2,7 @@
 
 ## Overview
 
-The following repo was forked using the Node template project developed by my team, with me leading the project to ensure the integration and enhancement of CO/GDS best practices, such as the use of `govuk-frontend`, `@co-digital` modules, and more. See [Node Web Template](https://github.com/cabinetoffice/node-web-template).
+The following repo was forked using the [Node Web Template](https://github.com/cabinetoffice/node-web-template).
 
 ## Task
 
@@ -24,14 +24,14 @@ Develop a simple Contacts web application that stores information such as name, 
 
 4. **API**: Provide a basic API that serves the application’s data.  
    - **Implementation**: Simple CRUD API endpoints have been provided, but further enhancements are required, such as adding an OpenAPI spec and incorporating versioning (e.g., `/api/v1/(create|update|remove)`).
-   - Get all contacts (with data)      - GET - `/contacts`
-   - Get contact page                  - GET - `/contact/create`
-   - Get contact with specific ID      - GET - `/contact/update/:ID`
+      - Get all contacts (with data)      - GET - `/contacts`
+      - Get contact page                  - GET - `/contact/create`
+      - Get contact with specific ID      - GET - `/contact/update/:ID`
 
-   - Delete contact with specific ID   - GET - `/contact/remove/:ID` - Removal from User side - No BE should or will be involved.
+      - Delete contact with specific ID   - GET - `/contact/remove/:ID` - Removal from User side - No BE should or will be involved.
 
-   - Create contact                    - POST - `/contact/create`
-   - Update contact with specific ID   - POST - `/contact/update/:ID`
+      - Create contact                    - POST - `/contact/create`
+      - Update contact with specific ID   - POST - `/contact/update/:ID`
 
 5. **Dynamic Interactions**: Include a few examples of dynamic user interfaces, such as AJAX interactions or partial updates to the DOM. These are considered extra features but will showcase your ability to enhance user experiences.  
    - **Implementation**: **TBD**.  
@@ -62,7 +62,7 @@ Follow the steps in [Launching-the-web-app](#launching-the-web-app), and ensure 
 
 ### Prerequisites
 
-1. Install [NodeJS V20.8](https://nodejs.org/en)
+1. Install [NodeJS v22.6.0](https://nodejs.org/en)
 2. Install [Docker](https://www.docker.com/get-started)
 
 ### Building the Docker Image
@@ -75,18 +75,29 @@ Follow the steps in [Launching-the-web-app](#launching-the-web-app), and ensure 
 - make docker-up
 
 This will then download the necessary dependencies, build the Docker image, and start the application.
-You will be able to access it on [localhost:3000](localhost:3000).Note that you can run the Node.js scripts directly using npm, such as installing dependencies with `npm ci` or running coverage tests with `npm run test`. However, using `make` improves portability and makes the project easier to maintain. 
-Check endpoints above.
+You will be able to access it on [localhost:3000](localhost:3000).
+
+### Work Locally
+
+You can run the Node.js scripts directly using `npm`, such as installing dependencies with `npm ci` or running coverage tests with `npm run test`. However, using `make` improves portability and makes the project easier to maintain.  
+
+```sh
+nvm use
+nmp ci
+npm run build
+npm run start
+```
 
 ## ToDo
 
 - Add API specification.
 - Update CDN origin.
-- Separate the list of contacts from the "Create Contact" page.
+- ~~Separate the list of contacts from the "Create Contact" page.~~
 - Implement address validation and improve other validations (length, character restrictions, etc.).
-- Complete the remaining CRUD actions, including views, models, controllers, routing, tests, and validations.
+- ~~Complete the remaining CRUD actions, including views, models, controllers, routing, tests, and validations.~~
 - Implement back link, landing page, and confirmation page.
-- Create a service to store information.
-- Remove hardcoded routing.
-- Starting page
+- ~~Create a service to store information~~.
+- Remove hardcoded routing in the view.
+- Add paginated logic
+- Add BE to reduce wait time for the DB calls
 - ...

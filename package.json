@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "build": "tsc && cp -r src/views dist/",
-    "start": "node dist/server.js",
+    "start": "node --env-file=.env dist/server.js",
     "start:dev": "npm run build && nodemon",
     "test": "jest",
     "coverage": "jest --coverage",
@@ -37,7 +37,10 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.758.0",
+    "@aws-sdk/lib-dynamodb": "^3.758.0",
     "@co-digital/logging": "^1.0.1",
+    "aws-sdk": "^2.1692.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",

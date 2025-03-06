@@ -62,7 +62,7 @@ Follow the steps in [Launching-the-web-app](#launching-the-web-app), and ensure 
 
 ### Prerequisites
 
-1. Install [NodeJS v22.6.0](https://nodejs.org/en)
+1. Install [NodeJS v22.6.0](https://nodejs.org/en) or [NVM](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
 2. Install [Docker](https://www.docker.com/get-started)
 
 ### Building the Docker Image
@@ -71,22 +71,13 @@ Follow the steps in [Launching-the-web-app](#launching-the-web-app), and ensure 
 
  Then run:
 
+- git clone https://github.com/eemb3d/ContactsNodeApp.git
+- cd ContactsNodeApp
 - make docker-build
 - make docker-up
 
 This will then download the necessary dependencies, build the Docker image, and start the application.
 You will be able to access it on [localhost:3000](localhost:3000).
-
-### Work Locally
-
-You can run the Node.js scripts directly using `npm`, such as installing dependencies with `npm ci` or running coverage tests with `npm run test`. However, using `make` improves portability and makes the project easier to maintain.  
-
-```sh
-nvm use
-nmp ci
-npm run build
-npm run start
-```
 
 ## ToDo
 

@@ -20,7 +20,7 @@ Develop a simple Contacts web application that stores information such as name, 
    - **Implementation**: GDS Style v5 has been added to ensure accessibility and best practices are considered and embedded in our applications.  
 
 3. **Data Storage**: Store contact information in a database. SQLite is suggested for simplicity, but other databases or data storage solutions (e.g., JSON files) are acceptable.  
-   - **Implementation**: **TBD**, Saved locally as an array.
+   - **Implementation**: ~~**TBD**, Saved locally as an array.~~ Integrated with DynamoDB on Docker env
 
 4. **API**: Provide a basic API that serves the application’s data.  
    - **Implementation**: Simple CRUD API endpoints have been provided, but further enhancements are required, such as adding an OpenAPI spec and incorporating versioning (e.g., `/api/v1/(create|update|remove)`).
@@ -91,4 +91,5 @@ You will be able to access it on [localhost:3000](localhost:3000).
 - Remove hardcoded routing in the view.
 - Add paginated logic
 - Add BE to reduce wait time for the DB calls
+- Improve unit test for service
 - ...

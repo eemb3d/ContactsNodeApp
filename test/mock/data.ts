@@ -3,18 +3,24 @@ import { jest, expect } from '@jest/globals';
 import * as config from '../../src/config';
 import express from 'express';
 
+export const TABLE_NAME_MOCK = { TableName: config.DYNAMO_TABLE_NAME }
 export const GET_REQUEST_MOCK = { method: 'GET', path: '/test' };
 export const MOCK_POST_CONTACT = {
     first_name: 'First',
     last_name: 'Last',
     phone_number: '12345678'
 };
-
+export const MOCK_ID = "123";
+export const MOCK_POST_MSG = `First Name: ${MOCK_POST_CONTACT.first_name}, Last Name: ${MOCK_POST_CONTACT.last_name}, Phone: ${MOCK_POST_CONTACT.phone_number} Created.`;
+export const MOCK_POST_BY_ID_MSG = `First Name: ${MOCK_POST_CONTACT.first_name}, Contact ID: ${MOCK_ID} Updated.`;
+export const MOCK_GET_BY_ID_MSG = `First Name: ${MOCK_POST_CONTACT.first_name}, Contact ID: ${MOCK_ID} Retrieved.`;
+export const MOCK_REMOVE_BY_ID_MSG = `Contact ID Removed: ${MOCK_ID}.`;
 export const MOCK_POST_INFO = { test: 'test' };
 export const MOCK_CONTACT = {
-    id: "123",
-    first_name: "first_name",
-    last_name: "last_name",
+    [config.ID]: MOCK_ID,
+    first_name: "First",
+    last_name: "Last",
+    phone_number: '12345678',
     address_line1: "address_line1",
     address_line2: "address_line2",
     address_town: "address_town",

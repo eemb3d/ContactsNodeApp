@@ -4,8 +4,8 @@
 
 {% for contact in contacts %}
 
-  {% set contactEditHref = "/contact/update/" + loop.index0 %}
-  {% set contactDeleteHref = "/contact/remove/" + loop.index0 %}
+  {% set contactEditHref = "/contact/update/" + contact.id %}
+  {% set contactDeleteHref = "/contact/remove/" + contact.id %}
 
   {% set contactSummaryData = (contactSummaryData.push({
     key: { 

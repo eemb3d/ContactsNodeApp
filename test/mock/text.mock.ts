@@ -10,4 +10,4 @@ export const MOCK_VIEWS_PATH = '/path/to/views';
 export const MOCK_REDIRECT_MESSAGE = 'Found. Redirecting to /contacts';
 export const MOCK_SUBMIT_CONTACT_MESSAGE = 'Submit Contact information';
 export const MOCK_GET_CONTACT_RESPONSE = 'Enter your first name';
-export const MOCK_POST_CONTACT_RESPONSE = 'First Name: First, Last Name:  Last, Last Name:  12345678 Created';
+export const MOCK_GET_CONTACTS_RESPONSE = 'List Contacts Details';

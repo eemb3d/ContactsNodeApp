@@ -8,6 +8,10 @@ export const NODE_SSL_ENABLED = getEnvironmentValue('NODE_SSL_ENABLED', 'false')
 export const PATH_SSL_PRIVATE_KEY = getEnvironmentValue('PATH_SSL_PRIVATE_KEY', 'false');
 export const PATH_SSL_CERTIFICATE = getEnvironmentValue('PATH_SSL_CERTIFICATE', 'false');
 
+export const REGION = getEnvironmentValue('REGION');
+export const DYNAMO_ENDPOINT = getEnvironmentValue('DYNAMO_ENDPOINT');
+export const DYNAMO_TABLE_NAME = getEnvironmentValue('DYNAMO_TABLE_NAME');
+
 export const SERVICE_NAME = 'Contacts Node Prototype';
 
 // Template

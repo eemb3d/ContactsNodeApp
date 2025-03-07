@@ -1,4 +1,5 @@
 jest.mock('../../../src/middleware/logger.middleware');
+jest.mock('../../../src/service/data.service');
 jest.mock('../../../src/utils/logger');
 
 import { jest, beforeEach, describe, expect, test } from '@jest/globals';
@@ -13,10 +14,10 @@ import { log } from '../../../src/utils/logger';
 import {
     MOCK_REDIRECT_MESSAGE,
     MOCK_GET_CONTACT_RESPONSE,
-    MOCK_POST_CONTACT_RESPONSE,
     MOCK_SUBMIT_CONTACT_MESSAGE,
+    MOCK_GET_CONTACTS_RESPONSE,
 } from '../../mock/text.mock';
-import { MOCK_POST_CONTACT } from '../../mock/data';
+import { MOCK_POST_CONTACT, MOCK_POST_MSG } from '../../mock/data';
 
 const mockedLogger = logger as jest.Mock<typeof logger>;
 mockedLogger.mockImplementation(
@@ -34,6 +35,16 @@ describe('CONTACT endpoint integration tests', () => {
 
             expect(res.status).toEqual(200);
             expect(res.text).toContain(MOCK_SUBMIT_CONTACT_MESSAGE);
+            expect(mockedLogger).toHaveBeenCalledTimes(1);
+        });
+    });
+
+    describe('GETALL tests', () => {
+        test('renders the CONTACTs page', async () => {
+            const res = await request(app).get(config.CONTACTS_URL);
+
+            expect(res.status).toEqual(200);
+            expect(res.text).toContain(MOCK_GET_CONTACTS_RESPONSE);
             expect(mockedLogger).toHaveBeenCalledTimes(1);
         });
     });
@@ -67,7 +78,7 @@ describe('CONTACT endpoint integration tests', () => {
                 .post(config.CONTACT_URL + config.CREATE)
                 .send(MOCK_POST_CONTACT);
 
-            expect(mockLog).toBeCalledWith(MOCK_POST_CONTACT_RESPONSE);
+            expect(mockLog).toBeCalledWith(MOCK_POST_MSG)
             expect(res.text).toContain(MOCK_REDIRECT_MESSAGE);
             expect(mockedLogger).toHaveBeenCalledTimes(1);
         });
